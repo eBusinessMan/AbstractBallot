@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /*
  * 针对是否事件的投票器
  * authored by luozx@1264995828@qq.com
- * 2017-07-31
+ * 2018-04-31
  */
 contract AbstractBallot {
 
@@ -83,6 +83,10 @@ contract AbstractBallot {
         }
     }
     
+    /*
+     * 通过事件名称查看事件投票进展状况
+     *
+     */
     function lookUpballotAffairByName(string affairName) public 
         returns(string affairNameX, bool isBallotingX, uint256 affairVersionX, uint256 ballotedMemsCountX, uint256 successPercentX){
         Ballot affairBallot = ballotAffairsMap[keccak256(affairName)];
