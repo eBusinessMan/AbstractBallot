@@ -32,8 +32,12 @@ struct Ballot{
 	```
 		bytes32: 集体事务affairName 的keccak256哈希值<br>
 * 抽象Function
-	<br>// 投票成功执行具体事务, 由子合约实现
-	<br>```sh function execute(string affairName) internal; ```
+	// 投票成功执行具体事务, 由子合约实现<br>
+	```sh function execute(string affairName) internal; ```<br>
+			// 此Function务必需要做此判断, 因为当心继承链条上的super.execute(affairName_)发生错位<br>
+			if (affairName_affair_A1.equals(affairName_)){<br>
+				// Do Your Bissiness...<br>
+			}
 	<br>// 重置 投票事务affairName 的投票状态, 主要用于投票过程中出现意外,需要重新投票. tips: 建议从集体中选出一个专门服务集体的角色,如CEO之类.
 	<br>```sh function resetCurrentBallotAffair(string affairName) public checkPermission; ```
 	<br>// 要求初始化 须要的参数: 投票人总个数
