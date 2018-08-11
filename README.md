@@ -27,9 +27,9 @@ struct Ballot{
 	ballotedMembersMapping: 已投票成员记录器，防止重复投票
 * ballotAffairsMap
 	记录 各投票事务投票情况 的容器
-```js
-mapping(bytes32 => Ballot) public ballotAffairsMap;
-```
+	```js
+	mapping(bytes32 => Ballot) public ballotAffairsMap;
+	```
 		bytes32: 集体事务affairName 的keccak256哈希值<br>
 * 抽象Function
 	<br>// 投票成功执行具体事务, 由子合约实现
@@ -44,7 +44,7 @@ mapping(bytes32 => Ballot) public ballotAffairsMap;
 	<br>通过事件名称查看事件投票进展状况
 
 ## How to use it
-	更完整的案例见我的另一个平台币项目 [OrgAffairBallotor](https://github.com/eBusinessMan/OrgAffairBallotor)
+	更完整的案例见我的[平台币项目](https://github.com/eBusinessMan/OrgAffairBallotor)
 ```js
 contract A is AbstractBallot{
 	using LibString for string;
