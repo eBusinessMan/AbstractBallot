@@ -52,7 +52,7 @@ struct Ballot{
 	<br>通过事件名称查看事件投票进展状况
 
 ## How to use it
-	更完整的案例见我的[平台币项目](https://github.com/eBusinessMan/OrgAffairBallotor)
+更完整的案例见我的[平台币项目](https://github.com/eBusinessMan/OrgAffairBallotor)
 ```js
 contract A is AbstractBallot{
 	using LibString for string;
